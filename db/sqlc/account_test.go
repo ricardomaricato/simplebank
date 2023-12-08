@@ -3,9 +3,10 @@ package db
 import (
 	"context"
 	"database/sql"
-	"github.com/ricardomaricato/simplebank/util"
 	"testing"
 	"time"
+
+	"github.com/ricardomaricato/simplebank/util"
 
 	"github.com/stretchr/testify/require"
 )

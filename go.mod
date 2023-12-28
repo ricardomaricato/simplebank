@@ -1,6 +1,6 @@
 module github.com/ricardomaricato/simplebank
 
-go 1.21.3
+go 1.21
 
 require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -12,7 +12,7 @@ require (
 	github.com/o1egl/paseto v1.0.0
 	github.com/spf13/viper v1.18.1
 	github.com/stretchr/testify v1.8.4
-	golang.org/x/crypto v0.16.0
+	golang.org/x/crypto v0.17.0
 )
 
 require (

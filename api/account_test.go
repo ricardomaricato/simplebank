@@ -5,8 +5,6 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/ricardomaricato/simplebank/token"
 	"io"
 	"net/http"
 	"net/http/httptest"
@@ -15,9 +13,11 @@ import (
 
 	mockdb "github.com/ricardomaricato/simplebank/db/mock"
 	db "github.com/ricardomaricato/simplebank/db/sqlc"
+	"github.com/ricardomaricato/simplebank/token"
 	"github.com/ricardomaricato/simplebank/util"
 	"github.com/stretchr/testify/require"
 
+	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 )
 

@@ -2,6 +2,7 @@ package token
 
 import (
 	"errors"
+	"fmt"
 	"time"
 
 	"github.com/google/uuid"
@@ -27,7 +28,9 @@ func NewPayload(username string, duration time.Duration) (*Payload, error) {
 	if err != nil {
 		return nil, err
 	}
-
+	fmt.Println(duration)
+	fmt.Println(time.Now())
+	fmt.Println(time.Now().Add(duration))
 	payload := &Payload{
 		ID:        tokenID,
 		Username:  username,

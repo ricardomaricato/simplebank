@@ -2,11 +2,12 @@ package gapi
 
 import (
 	"context"
+	"time"
+
 	"github.com/rs/zerolog/log"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
-	"time"
 )
 
 func GrpcLogger(

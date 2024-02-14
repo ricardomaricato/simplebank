@@ -3,15 +3,16 @@ package gapi
 import (
 	"context"
 	"errors"
-	"github.com/hibiken/asynq"
-	"github.com/lib/pq"
+	"time"
+
 	db "github.com/ricardomaricato/simplebank/db/sqlc"
 	"github.com/ricardomaricato/simplebank/pb"
 	"github.com/ricardomaricato/simplebank/util"
 	"github.com/ricardomaricato/simplebank/val"
 	"github.com/ricardomaricato/simplebank/worker"
-	"time"
 
+	"github.com/hibiken/asynq"
+	"github.com/lib/pq"
 	"google.golang.org/genproto/googleapis/rpc/errdetails"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

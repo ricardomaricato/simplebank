@@ -2,7 +2,6 @@ package api
 
 import (
 	"fmt"
-
 	db "github.com/ricardomaricato/simplebank/db/sqlc"
 	"github.com/ricardomaricato/simplebank/token"
 	"github.com/ricardomaricato/simplebank/util"

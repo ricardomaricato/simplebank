@@ -2,9 +2,11 @@ package worker
 
 import (
 	"context"
+
+	db "github.com/ricardomaricato/simplebank/db/sqlc"
+
 	"github.com/hibiken/asynq"
 	"github.com/redis/go-redis/v9"
-	db "github.com/ricardomaricato/simplebank/db/sqlc"
 	"github.com/rs/zerolog/log"
 )
 

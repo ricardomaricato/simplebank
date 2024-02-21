@@ -2,8 +2,8 @@ package main
 
 import (
 	"context"
-	"database/sql"
 	"errors"
+	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/ricardomaricato/simplebank/mail"
 	"net"
 	"net/http"
@@ -22,7 +22,6 @@ import (
 	_ "github.com/golang-migrate/migrate/v4/source/file"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/hibiken/asynq"
-	_ "github.com/lib/pq"
 	"github.com/rakyll/statik/fs"
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -41,7 +40,7 @@ func main() {
 		log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
 	}
 
-	conn, err := sql.Open(config.DBDriver, config.DBSource)
+	connPool, err := pgxpool.New(context.Background(), config.DBSource)
 	if err != nil {
 		log.Fatal().Err(err).Msg("cannot connect to db")
 	}
@@ -54,7 +53,7 @@ func main() {
 
 	taskDistributor := worker.NewRedisTaskDistributor(redisOpt)
 
-	store := db.NewStore(conn)
+	store := db.NewStore(connPool)
 	go runTaskProcessor(config, redisOpt, store)
 	go runGatewayServer(config, store, taskDistributor)
 	runGrpcServer(config, store, taskDistributor)

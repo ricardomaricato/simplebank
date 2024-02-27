@@ -4,8 +4,6 @@ This repository contains the codes of the [Backend Master Class](https://bit.ly/
 
 ![Backend master class](backend-master.png)
 
-And don't hesitate to [join Tech School's Discord group](https://bit.ly/techschooldc) to chat directly with me and other students.
-
 In this course, you will learn step-by-step how to design, develop and deploy a backend web service from scratch. I believe the best way to learn programming is to build a real application. Therefore, throughout the course, you will learn how to build a backend web service for a simple bank. It will provide APIs for the frontend to do the following things:
 
 - Create and manage bank accounts.
